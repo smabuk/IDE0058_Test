@@ -13,12 +13,14 @@ public class UnitTest1
 	{
 		Customer? customer = new();
 		customer?.Name = "Default Name";
-	}
+		Assert.Equal("Default Name", customer?.Name);
+    }
 
-	[Fact]
+    [Fact]
 	public void Assignment_ShouldFail()
 	{
 		Customer? customer = null;
 		customer?.Name = "Default Name";
-	}
+		Assert.Null(customer?.Name);
+    }
 }
